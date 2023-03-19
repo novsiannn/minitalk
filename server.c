@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:56:28 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/19 18:00:59 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/03/19 19:43:32 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	handler(int signal, siginfo_t *siginfo, void *context)
 			kill(g_temp.client_pid, SIGUSR1);
 		ft_putchar_fd(g_temp.prog_char, 1);
 		init_g_temp();
-		exit(0);
 	}
 	g_temp.client_pid = siginfo->si_pid; 
 }
