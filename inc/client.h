@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:46:05 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/13 21:05:26 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/03/19 16:23:23 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,10 @@
 # include <stdlib.h>
 # include <sys/signal.h>
 # include <unistd.h>
+
+void	wrong_pid(void);
+void	send_byte(char byte, int pid);
+void	send_message(char *msg, int pid);
+void	got_message(int sig);
 
 #endif 

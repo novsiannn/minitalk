@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:52:11 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/13 21:04:19 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/03/19 17:46:50 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,14 @@
 # include <stdlib.h>
 # include <sys/signal.h>
 # include <unistd.h>
+
+void	handler(int signal, siginfo_t *siginfo, void *context);
+void	init_g_temp(void);
+
+typedef struct s_temp{
+	int 	i;
+	int		client_pid;
+	char	prog_char;
+}t_temp;
 
 #endif
