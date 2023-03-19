@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:52:11 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/19 17:46:50 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/03/19 19:58:42 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	handler(int signal, siginfo_t *siginfo, void *context);
 void	init_g_temp(void);
 
 typedef struct s_temp{
-	int 	i;
+	int		i;
 	int		client_pid;
 	char	prog_char;
 }t_temp;
