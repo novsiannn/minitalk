@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:56:28 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/19 20:05:39 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/03/21 21:53:22 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	handler(int signal, siginfo_t *siginfo, void *context)
 	if (g_temp.i == 8)
 	{
 		if (!g_temp.prog_char)
+		{
+			write(1,"\n",1);
 			kill (g_temp.client_pid, SIGUSR1);
+		}
 		ft_putchar_fd (g_temp.prog_char, 1);
 		init_g_temp ();
 	}
@@ -44,7 +47,7 @@ int	main(void)
 {
 	struct sigaction	siga;
 
-	ft_printf("Server's pid: %d\n", getpid());
+	ft_printf("Server's PID: %d\n", getpid());
 	siga.sa_flags = SA_SIGINFO;
 	siga.sa_sigaction = &handler;
 	sigaction (SIGUSR1, &siga, NULL);

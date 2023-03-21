@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:56:13 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/19 20:02:56 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/03/21 21:56:12 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	send_byte(char byte, int pid)
 			kill_return = kill(pid, SIGUSR1);
 		if (kill_return == -1)
 			wrong_pid();
-		usleep(10);
+		usleep(100);
 		i--;
 	}
 }
@@ -50,7 +50,7 @@ void	send_message(char *msg, int pid)
 
 void	got_message(int sig)
 {
-	ft_printf("Message was received\n");
+	ft_printf("Message was succesful received!\n");
 }
 
 int	main(int ac, char **av)
@@ -60,7 +60,7 @@ int	main(int ac, char **av)
 	signal (SIGUSR1, got_message);
 	if (ac != 3)
 	{
-		ft_putstr_fd ("Error! Example: ./client [pid] [message]\n", 2);
+		ft_putstr_fd ("Error! Usage: ./client [pid] [message]\n", 2);
 		return (-1);
 	}
 	pid = ft_atoi(av[1]);
