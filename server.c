@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:56:28 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/21 21:53:22 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/03/21 22:20:54 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	handler(int signal, siginfo_t *siginfo, void *context)
 	int	bit;
 
 	bit = signal - SIGUSR1;
+	(void)context;
 	if (siginfo->si_pid != g_temp.client_pid)
 		init_g_temp ();
 	g_temp.prog_char = g_temp.prog_char << 1 | bit;

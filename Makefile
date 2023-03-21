@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
+#    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 15:34:58 by nikitos           #+#    #+#              #
-#    Updated: 2023/03/19 11:53:54 by novsiann         ###   ########.fr        #
+#    Updated: 2023/03/21 22:19:41 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CLIENT_OBJ_MAIN = ${CLIENT_MAIN:.c=.o}
 
 RM = rm -f
 
-# CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g
 
 CC = gcc
 
