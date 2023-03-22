@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:56:28 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/21 22:56:48 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/03/22 16:50:03 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ void	handler(int signal, siginfo_t *siginfo, void *context)
 
 	bit = signal - SIGUSR1;
 	(void)context;
-	if (siginfo->si_pid != g_temp.client_pid)
+	if (siginfo->si_pid =! g_temp.client_pid)
 		init_g_temp ();
 	g_temp.prog_char = g_temp.prog_char << 1 | bit;
 	g_temp.i++;
 	if (g_temp.i == 8)
 	{
+		ft_putchar_fd (g_temp.prog_char, 1);
 		if (!g_temp.prog_char)
 		{
 			kill (g_temp.client_pid, SIGUSR1);
 			write(1, "\n", 1);
 		}
-		ft_putchar_fd (g_temp.prog_char, 1);
 		init_g_temp ();
 	}
 	g_temp.client_pid = siginfo->si_pid;

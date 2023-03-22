@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:56:13 by nikitos           #+#    #+#             */
-/*   Updated: 2023/03/21 22:57:10 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/03/22 16:28:52 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	send_byte(char byte, int pid)
 			kill_return = kill(pid, SIGUSR1);
 		if (kill_return == -1)
 			wrong_pid();
-		usleep(100);
+		usleep(250);
 		i--;
 	}
 }
